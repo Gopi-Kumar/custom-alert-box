@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Notes</title>
+    <!-- css -->
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color:rgb(211, 211, 211);
+            display: flex;
+            justify-content: center;
+        }
+
+        .alertBox{
+            width: 300px;
+            position: absolute;
+            top:10px;
+            left: calc(50% - 150px);
+            display: none;
+            text-align: justify;
+            box-shadow: 0px 0px 5px rgb(121, 121, 121);
+            
+        }
+        .message .confirm{
+            width:100%;
+            
+        }
+        .message p{
+            min-height: 85px;
+            font-size: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align:left;
+            background-color:rgb(255, 255, 255);
+            width:100%;
+            padding:1rem 2rem;
+
+        }
+        .confirm{
+            background-color:rgb(119, 69, 236);
+            padding: 0.2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .confirm button{
+            padding:0.2rem 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            margin:0.1rem 0.2rem;
+            border:0;
+            outline: 0;
+            cursor: pointer;
+            background-color:white;
+            color:rgb(119, 69, 236);
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px black;
+            
+        }
+        button:active{
+            background-color:rgb(119, 69, 236);
+            color:white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px black;
+        }
+    </style>
+    
+
+</head>
+<body >
+    <button onclick="alert('Button Clicked')">Click</button>
+    
+    
+    <!-- html code for alert box -->
+    <div class="alertBox" id="alertBox">
+        <div class="message">
+            <p id="msg">there goes your </p>
+        </div>
+        <div class="confirm">
+            <button id="ok">OK</button>
+        </div>
+    </div>
+</body>
+
+
+
+<!-- Javascript  -->
+<script>
+    function alert(msg){
+        let alertBox = document.getElementById("alertBox");
+        alertBox.style.display = "block";
+        document.getElementById('msg').textContent = msg;
+        let okBtn = document.getElementById('ok');
+        okBtn.addEventListener("click",()=>{
+            alertBox.style.display="none";
+        })
+                   
+    }
+</script>
+
+</html>
